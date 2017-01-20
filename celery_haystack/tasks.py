@@ -152,5 +152,5 @@ class CeleryHaystackUpdateIndex(Task):
             apps = settings.CELERY_HAYSTACK_COMMAND_APPS
         # Run the update_index management command
         logger.info("Starting update index")
-        call_command('update_index', *apps, **defaults)
+        call_command('update_index --remove', *apps, **defaults)
         logger.info("Finishing update index")
